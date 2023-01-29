@@ -64,8 +64,11 @@ def game():
     rot_ret = 0
     pos_x = 50
     pos_y = -25
+    pos_x_verm = 150
+    pos_y_verm = -45
     ret_preto = pygame.transform.rotate(pygame.image.load('imagens/ret_preto.png'), rot_ret)
-    
+    ret_verm = pygame.transform.rotate(pygame.image.load('imagens/ret_verm.png'), rot_ret)
+        
     # ret_preto = pygame.Rect(pos_x, pos_y, 50, 50)
     
     pos_play = 250
@@ -94,10 +97,17 @@ def game():
         
         tela.blit(ret_preto, (pos_x, pos_y))
         if pos_y >= altura:
-            pos_y = -25
-            pos_x = randrange(40, 500, 100)
+            pos_y = randrange(-60, -10, 10)
+            pos_x = randrange(40, 480, 50)
         pos_y = pos_y + 3
-        rot_ret = rot_ret + 3
+        
+
+        tela.blit(ret_verm, (pos_x_verm, pos_y_verm))
+        if pos_y_verm >= altura:
+            pos_y_verm = -45
+            pos_x_verm = randrange(40, 480, 50)
+        pos_y_verm = pos_y_verm + 3
+        
         
         
                        
